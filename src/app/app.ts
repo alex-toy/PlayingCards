@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PlayingCard } from './components/playing-card/playing-card';
+import { Monster } from './models/monster.model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [PlayingCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('playing-cards');
+  monster : Monster = new Monster();
 }
