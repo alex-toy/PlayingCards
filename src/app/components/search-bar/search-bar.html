@@ -1,0 +1,7 @@
+<div>
+    <input type="text" [(ngModel)]="search" (ngModelChange)="emitSearch($event)">
+    <input type="text" [(ngModel)]="search" (ngModelChange)="emitSearch2($event)">
+    <button (click)="incrementCounter()">search</button>
+    <button (click)="incrementCounter()">OUTPUT</button>
+    <input type="text" [ngModel]="mysearch()" (ngModelChange)="emitSearch2($event)">
+</div>

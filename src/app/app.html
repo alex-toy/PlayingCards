@@ -1,1 +1,19 @@
-<app-playing-card [monster]="monster"></app-playing-card>
+<app-search-bar 
+    (onIncrement)="incrementCounter()" 
+    (onClick)="incrementCounter()" 
+    [(search)]="search"
+></app-search-bar>
+<p>Search : {{ search }}</p>
+<p>click count : {{ count }}</p>
+
+
+@for (monster of monsters; track $index) {
+    @if($index %2 == 0){
+        <p>{{ $index }}</p>
+        <app-playing-card [label]="'id' + $index" [power]="10" [monster]="monster"></app-playing-card>
+    }
+    @else {
+        <p>{{ $index * 2 }}</p>
+        <app-playing-card [label]="'ID' + $index" [power]="20" [monster]="monster"></app-playing-card>
+    }
+}

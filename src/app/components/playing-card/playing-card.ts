@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input, InputSignal } from '@angular/core';
 import { Monster } from '../../models/monster.model';
 
 @Component({
@@ -8,5 +8,7 @@ import { Monster } from '../../models/monster.model';
   styleUrl: './playing-card.css',
 })
 export class PlayingCard {
-  @Input() monster : Monster = new Monster();
+  @Input({required: true}) monster : Monster = new Monster("", 0);
+  label : InputSignal<string> = input("label");
+  power : InputSignal<number> = input.required();
 }
